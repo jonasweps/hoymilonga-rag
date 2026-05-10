@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "description": "Golden dataset för utvärdering av Hoymilonga RAG-chatbot. Varje exempel innehåller en fråga, ett facit-svar (för LLM-as-judge), och förväntade källors URL-fragment (för retrieval-metrik som Hit Rate och MRR). Datasetet täcker olika frågetyper: enkla faktafrågor, frågor som kräver flera källor, samt off-topic-frågor som botten ska VÄGRA svara på.",
+    "version": "1.0",
+    "created": "2026-05-09",
+    "language": "svenska/engelska/spanska blandat (Hoymilonga är flerspråkig)"
+  },
+  "examples": [
+    {
+      "id": 1,
+      "category": "enkel_fakta",
+      "question": "Vad är Hoymilonga?",
+      "expected_answer": "Hoymilonga är en sajt/plattform som listar tangoevenemang (milongor) — alltså tillfällen där folk träffas för att dansa argentinsk tango. Den fungerar som en kalender och sökguide för tangodansare.",
+      "expected_source_keywords": ["hoymilonga", "milonga", "tango", "about", "om"],
+      "should_refuse": false
+    },
+    {
+      "id": 2,
+      "category": "enkel_fakta",
+      "question": "Vad är en milonga?",
+      "expected_answer": "En milonga är ett socialt evenemang där människor samlas för att dansa argentinsk tango. Det är också namnet på en tangogenre med snabbare tempo.",
+      "expected_source_keywords": ["milonga", "tango"],
+      "should_refuse": false
+    },
+    {
+      "id": 3,
+      "category": "navigering",
+      "question": "Hur hittar jag milongor i en specifik stad?",
+      "expected_answer": "Hoymilonga har en sökfunktion eller stadskatalog där man kan filtrera evenemang efter stad eller land.",
+      "expected_source_keywords": ["search", "city", "stad", "find"],
+      "should_refuse": false
+    },
+    {
+      "id": 4,
+      "category": "praktiskt",
+      "question": "Kan jag lägga upp ett eget evenemang på Hoymilonga?",
+      "expected_answer": "Ja, organisatörer kan registrera och annonsera sina egna milongor på plattformen, ofta efter att ha skapat ett konto.",
+      "expected_source_keywords": ["organize", "publish", "add", "register", "post"],
+      "should_refuse": false
+    },
+    {
+      "id": 5,
+      "category": "kostnad",
+      "question": "Kostar det något att använda Hoymilonga?",
+      "expected_answer": "Användning av sajten för att hitta evenemang är typiskt gratis. Det kan finnas avgifter för organisatörer att lista evenemang eller premiumfunktioner.",
+      "expected_source_keywords": ["price", "free", "cost", "subscription", "pris"],
+      "should_refuse": false
+    },
+    {
+      "id": 6,
+      "category": "kontakt",
+      "question": "Hur kontaktar jag Hoymilonga?",
+      "expected_answer": "Kontaktuppgifter (e-post eller formulär) finns vanligtvis på sajtens kontaktsida.",
+      "expected_source_keywords": ["contact", "kontakt", "email"],
+      "should_refuse": false
+    },
+    {
+      "id": 7,
+      "category": "multi_kalla",
+      "question": "Vilka funktioner erbjuder Hoymilonga för dansare jämfört med organisatörer?",
+      "expected_answer": "Dansare kan söka och hitta evenemang, eventuellt skapa profiler. Organisatörer kan publicera sina milongor, hantera bokningar och nå sin målgrupp.",
+      "expected_source_keywords": ["dancer", "organizer", "feature", "user"],
+      "should_refuse": false
+    },
+    {
+      "id": 8,
+      "category": "off_topic_ska_vagra",
+      "question": "Vad är receptet på pasta carbonara?",
+      "expected_answer": "Boten ska vägra svara eftersom frågan inte handlar om Hoymilonga eller dess innehåll.",
+      "expected_source_keywords": [],
+      "should_refuse": true
+    },
+    {
+      "id": 9,
+      "category": "off_topic_ska_vagra",
+      "question": "Vem vann VM i fotboll 2022?",
+      "expected_answer": "Boten ska vägra svara eftersom frågan inte handlar om Hoymilonga.",
+      "expected_source_keywords": [],
+      "should_refuse": true
+    },
+    {
+      "id": 10,
+      "category": "vet_inte_ska_erkanna",
+      "question": "Vilken är Hoymilongas exakta omsättning för räkenskapsåret 2025?",
+      "expected_answer": "Boten ska säga att den inte hittar denna information i sina källor (eftersom företagsekonomiska detaljer inte ligger på den publika sajten).",
+      "expected_source_keywords": [],
+      "should_refuse": false,
+      "should_admit_unknown": true
+    },
+    {
+      "id": 11,
+      "category": "tango_innehall",
+      "question": "Vad är skillnaden mellan tango och milonga som musikgenrer?",
+      "expected_answer": "Tango har ofta ett långsammare och mer melankoliskt tempo, medan milonga (som genre) är snabbare och mer rytmisk.",
+      "expected_source_keywords": ["tango", "milonga", "music", "genre"],
+      "should_refuse": false
+    },
+    {
+      "id": 12,
+      "category": "spraak",
+      "question": "¿En qué idiomas está disponible Hoymilonga?",
+      "expected_answer": "Hoymilonga är en internationell sajt och stödjer typiskt flera språk (spanska, engelska, möjligen fler).",
+      "expected_source_keywords": ["language", "idioma", "english", "español"],
+      "should_refuse": false
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+# =============================================================================
+# .gitignore — filer som ALDRIG ska upp på GitHub
+# =============================================================================
+
+# --- HEMLIGHETER (det viktigaste!) ---
+.env
+.env.local
+*.key
+secrets/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- Data & databaser (för stora för Git) ---
+data/raw/
+data/chroma_db/
+data/processed/
+logs/
+*.sqlite3
+*.db
+
+# --- Evaluering ---
+eval/results_*.csv
+eval/runs/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# --- Streamlit ---
+.streamlit/secrets.toml
+
+# --- Distribution ---
+dist/
+build/
+*.egg-info/
