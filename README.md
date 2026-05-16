@@ -10,6 +10,20 @@ sajt där tangodansare hittar och annonserar milongor (tangoevenemang).
 Projektet demonstrerar hela RAG-pipelinen från web scraping till evaluering,
 med stöd för flera LLM-leverantörer.
 
+## Skärmdumpar
+
+**Streamlit-gränssnittet med OpenAI gpt-4o-mini (molnbaserad modell):**
+
+![Streamlit-appen med OpenAI](Screenshot%202026-05-16%20at%2015.09.31.png)
+
+**Streamlit-gränssnittet med Ollama llama3.1:8b (lokal modell — full datasekretess):**
+
+![Streamlit-appen med Ollama](Screenshot%202026-05-16%20at%2015.35.54.png)
+
+Att samma RAG-pipeline fungerar mot både en molnbaserad och en lokal modell
+illustrerar den leverantörsagnostiska arkitekturen och möjliggör direkt
+jämförelse av kvalitet kontra datasekretess (se kapitel 10 i notebooken).
+
 ---
 
 ## Innehåll
